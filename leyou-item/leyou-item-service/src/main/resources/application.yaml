@@ -1,0 +1,31 @@
+server:
+  port: 7001
+spring:
+  application:
+    name: item-service
+  datasource:
+    url: jdbc:mysql:///leyoumall
+    username: root
+    password: mysql
+    driver-class-name: com.mysql.jdbc.Driver
+  rabbitmq:
+    host: 127.0.0.1
+    username: /leyou
+    password: leyou
+    virtual-host: /leyou
+    template:
+      exchange: LEYOU.ITEM.EXCHANGE
+    publisher-confirms: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10001/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 5 # 5秒钟发送一次心跳
+    lease-expiration-duration-in-seconds: 10 # 10秒不发送就过期
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    com.leyou.item: debug

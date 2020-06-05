@@ -1,0 +1,16 @@
+server:
+  port: 7006
+spring:
+  application:
+    name: sms-service
+  rabbitmq:
+    host: 127.0.0.1
+    username: /leyou
+    password: leyou
+    virtual-host: /leyou
+leyou:
+  sms:
+    accessKeyId: LTAI4FhfgDakjdRScYvkq9ui # 你自己的accessKeyId
+    accessKeySecret: mhmVedPl2szJfLLNPGsVCedyb6Y3oa # 你自己的AccessKeySecret
+    signName: leyouMall # 签名名称
+    verifyCodeTemplate: SMS_186610107 # 模板ID
